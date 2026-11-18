@@ -77,7 +77,7 @@ input[type=range]{width:100%;accent-color:var(--s1);height:26px}
 .big{font-size:30px;font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .prio{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
 @media(max-width:760px){.prio{grid-template-columns:1fr}}
-.prio div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:12px 14px}
+.prio>div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:12px 14px}
 .prio .h{font-size:11px;font-weight:700;color:#9fc4f5;letter-spacing:.05em}
 .prio .t{font-weight:700;margin:3px 0 2px}
 .prio .d{font-size:12.5px;color:#c4cbe0}
@@ -96,7 +96,7 @@ details.dt summary{cursor:pointer;font-size:12px;color:var(--s1);font-weight:600
       <div>
         <div class="pill">CEO / CFO OFFICE · BOARD VIEW</div>
         <h1 style="margin-top:10px">Expression 360 Services India Ltd: Performance &amp; Strategy Dashboard</h1>
-        <h5 style="margin-top:1px">Prepared by - Puneet Bajaj</h5>
+         <h5 style="margin-top:1px">Prepared by - Puneet Bajaj</h5>
         <div class="sub">FY2023 – H1 FY2026 (6 months to 30 Sep 2025) · Restated DRHP figures · ₹ crore unless stated</div>
       </div>
       <div style="display:flex;gap:8px;flex-wrap:wrap">
@@ -113,7 +113,7 @@ details.dt summary{cursor:pointer;font-size:12px;color:var(--s1);font-weight:600
 </header>
 
 <nav class="tabs"><div class="wrap">
-  <a href="#kpis">Headline KPIs</a><a href="#pl">P&amp;L &amp; Margins</a><a href="#cash">Cash &amp; Balance Sheet</a><a href="#customers">Customers &amp; Risk</a><a href="#market">Market &amp; Peers</a><a href="#insights">P&amp;L Insights</a><a href="#mins">Market Insights</a><a href="#swot">SWOT</a><a href="#data">Data &amp; Notes</a>
+  <a href="#" id="navAna" style="color:var(--s1);font-weight:700">🤖 Expression360 Analyst</a><a href="#kpis">Headline KPIs</a><a href="#pl">P&amp;L &amp; Margins</a><a href="#cash">Cash &amp; Balance Sheet</a><a href="#customers">Customers &amp; Risk</a><a href="#market">Market &amp; Peers</a><a href="#insights">P&amp;L Insights</a><a href="#mins">Market Insights</a><a href="#swot">SWOT</a><a href="#data">Data &amp; Notes</a>
 </div></nav>
 
 <main class="wrap">
@@ -261,6 +261,73 @@ details.dt summary{cursor:pointer;font-size:12px;color:var(--s1);font-weight:600
 </main>
 <footer><div class="wrap">Expression 360 Services India Ltd · CEO / CFO dashboard · Built from DRHP-disclosed data · ₹ crore unless stated</div></footer>
 
+<!-- ============ EXPRESSION360 ANALYST: floating chat widget ============ -->
+<button id="anaLaunch" aria-label="Open Expression360 Analyst chat">
+  <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkV4cGVyaW9uIEFuYWx5c3QgYXZhdGFyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZWFCZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzJhNzhkNiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE0MjEzZCIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImVhU2tpbiIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y0Y2ZhZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2U3YjQ4ZiIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImVhSGFpciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzNhMmEyNiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFlMTUxMyIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8Y2xpcFBhdGggaWQ9ImVhQ2xpcCI+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNjAiLz48L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBjbGlwLXBhdGg9InVybCgjZWFDbGlwKSI+CiAgICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjYwIiByPSI2MCIgZmlsbD0idXJsKCNlYUJnKSIvPgogICAgPCEtLSBkYXRhIGdyaWQgLyBjaXJjdWl0IGFjY2VudHMgLS0+CiAgICA8ZyBzdHJva2U9IiM5ZmM0ZjUiIHN0cm9rZS1vcGFjaXR5PSIuMTgiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSI+CiAgICAgIDxwYXRoIGQ9Ik04IDM0aDE2bDYtNmgxMiIvPjxwYXRoIGQ9Ik0xMTIgMzBIOTZsLTYgNkg4MCIvPjxwYXRoIGQ9Ik02IDc2aDEyIi8+PHBhdGggZD0iTTExNCA3NGgtMTIiLz4KICAgIDwvZz4KICAgIDxnIGZpbGw9IiM5ZmU3ZmYiIGZpbGwtb3BhY2l0eT0iLjQ1Ij48Y2lyY2xlIGN4PSI0MiIgY3k9IjI4IiByPSIxLjYiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjM2IiByPSIxLjYiLz48Y2lyY2xlIGN4PSIxOCIgY3k9Ijc2IiByPSIxLjQiLz48Y2lyY2xlIGN4PSIxMDIiIGN5PSI3NCIgcj0iMS40Ii8+PC9nPgogICAgPCEtLSBoYWlyIChiYWNrKSAtLT4KICAgIDxwYXRoIGQ9Ik0zMyA2MGMtMy0yNCA5LTM4IDI3LTM4czMwIDE0IDI3IDM4Yy0xIDEwIDIgMjAgNiAyOEgyN2M0LTggNy0xOCA2LTI4eiIgZmlsbD0idXJsKCNlYUhhaXIpIi8+CiAgICA8IS0tIGJsYXplciAmIHNob3VsZGVycyAtLT4KICAgIDxwYXRoIGQ9Ik0xNCAxMjJjMy0yMiAyMC0zNCA0Ni0zNHM0MyAxMiA0NiAzNHoiIGZpbGw9IiMxYjJiNTIiLz4KICAgIDxwYXRoIGQ9Ik00NCA5MGwxNiAyMiAxNi0yMmMtNS0yLTEwLTMtMTYtM3MtMTEgMS0xNiAzeiIgZmlsbD0iI2ZmZiIvPgogICAgPHBhdGggZD0iTTQ0IDkwbC04IDQgMTQgMjIgMTAtNHpNNzYgOTBsOCA0LTE0IDIyLTEwLTR6IiBmaWxsPSIjMjIzODZiIi8+CiAgICA8IS0tIG5lY2sgLS0+CiAgICA8cGF0aCBkPSJNNTIgNzBoMTZ2MTRjMCA0LTQgNy04IDdzLTgtMy04LTd6IiBmaWxsPSIjZGNhNjg0Ii8+CiAgICA8IS0tIGZhY2UgLS0+CiAgICA8ZWxsaXBzZSBjeD0iNjAiIGN5PSI1NiIgcng9IjE4LjUiIHJ5PSIyMS41IiBmaWxsPSJ1cmwoI2VhU2tpbikiLz4KICAgIDwhLS0gaGFpciAoZnJvbnQsIHNpZGUtc3dlcHQpIC0tPgogICAgPHBhdGggZD0iTTQxIDU0YzAtMTYgOS0yNSAyMS0yNSAxMCAwIDE4IDYgMTkgMTgtNi03LTE1LTEwLTI0LTktNiAxLTExIDYtMTYgMTZ6IiBmaWxsPSJ1cmwoI2VhSGFpcikiLz4KICAgIDxwYXRoIGQ9Ik00MSA1NGMxLTYgMy0xMSA3LTE1LTEgNi0yIDExLTEgMTh6IiBmaWxsPSIjMmExZTFiIi8+CiAgICA8IS0tIGJyb3dzICYgZXllcyAtLT4KICAgIDxwYXRoIGQ9Ik00OC41IDUwLjVjMi41LTEuNiA1LjUtMS42IDcuNS0uMk02NCA1MC4zYzItMS40IDUtMS40IDcuNS4yIiBzdHJva2U9IiMyYTFlMWIiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICAgIDxlbGxpcHNlIGN4PSI1Mi41IiBjeT0iNTYiIHJ4PSIyLjMiIHJ5PSIyLjYiIGZpbGw9IiMxZjJhNDQiLz48ZWxsaXBzZSBjeD0iNjcuNSIgY3k9IjU2IiByeD0iMi4zIiByeT0iMi42IiBmaWxsPSIjMWYyYTQ0Ii8+CiAgICA8Y2lyY2xlIGN4PSI1My4zIiBjeT0iNTUuMSIgcj0iLjgiIGZpbGw9IiNmZmYiLz48Y2lyY2xlIGN4PSI2OC4zIiBjeT0iNTUuMSIgcj0iLjgiIGZpbGw9IiNmZmYiLz4KICAgIDwhLS0gbm9zZSwgc21pbGUsIGNoZWVrcyAtLT4KICAgIDxwYXRoIGQ9Ik02MCA1OC41Yy0uNiAzLTEuNCA0LjYtLjIgNS40IiBzdHJva2U9IiNjOThmNmMiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik01NCA2N2MzLjYgMyA4LjQgMyAxMiAwIiBzdHJva2U9IiNiODUwNWYiIHN0cm9rZS13aWR0aD0iMS44IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICAgIDxlbGxpcHNlIGN4PSI0OC41IiBjeT0iNjMuNSIgcng9IjMiIHJ5PSIxLjgiIGZpbGw9IiNlYjhmOGYiIGZpbGwtb3BhY2l0eT0iLjM1Ii8+PGVsbGlwc2UgY3g9IjcxLjUiIGN5PSI2My41IiByeD0iMyIgcnk9IjEuOCIgZmlsbD0iI2ViOGY4ZiIgZmlsbC1vcGFjaXR5PSIuMzUiLz4KICAgIDwhLS0gQUkgaGVhZHNldCAtLT4KICAgIDxwYXRoIGQ9Ik0zOSA1NmMwLTE3IDktMjcgMjEtMjdzMjEgMTAgMjEgMjciIHN0cm9rZT0iIzlmZTdmZiIgc3Ryb2tlLXdpZHRoPSIyLjYiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPHJlY3QgeD0iMzQuNSIgeT0iNTIiIHdpZHRoPSI4IiBoZWlnaHQ9IjEzIiByeD0iNCIgZmlsbD0iIzVmZDNmZiIvPjxyZWN0IHg9Ijc3LjUiIHk9IjUyIiB3aWR0aD0iOCIgaGVpZ2h0PSIxMyIgcng9IjQiIGZpbGw9IiM1ZmQzZmYiLz4KICAgIDxyZWN0IHg9IjM2LjUiIHk9IjU1IiB3aWR0aD0iNCIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iI2U2ZmJmZiIvPjxyZWN0IHg9Ijc5LjUiIHk9IjU1IiB3aWR0aD0iNCIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iI2U2ZmJmZiIvPgogICAgPHBhdGggZD0iTTM4LjUgNjRjMCA3IDQgMTEgMTAgMTIiIHN0cm9rZT0iIzlmZTdmZiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNzYuMiIgcj0iMi40IiBmaWxsPSIjNWZkM2ZmIi8+CiAgICA8IS0tIGNoYXJ0IGJhZGdlIC0tPgogICAgPGNpcmNsZSBjeD0iOTEiIGN5PSI5MCIgcj0iMTMiIGZpbGw9IiMxYmFmN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICAgIDxyZWN0IHg9Ijg0LjYiIHk9IjkxIiB3aWR0aD0iMy4yIiBoZWlnaHQ9IjUuNCIgcng9IjEiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSI4OS40IiB5PSI4NyIgd2lkdGg9IjMuMiIgaGVpZ2h0PSI5LjQiIHJ4PSIxIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iOTQuMiIgeT0iODMuNCIgd2lkdGg9IjMuMiIgaGVpZ2h0PSIxMyIgcng9IjEiIGZpbGw9IiNmZmYiLz4KICA8L2c+Cjwvc3ZnPgo=" alt="" style="width:100%;height:100%;border-radius:50%;display:block">
+  <span id="anaBadge">1</span>
+</button>
+<div id="anaTip">👋 Ask me anything about Expression 360's numbers</div>
+
+<div id="anaWin" role="dialog" aria-label="Expression360 Analyst" aria-hidden="true">
+  <div class="aw-head">
+    <img class="aw-av" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkV4cGVyaW9uIEFuYWx5c3QgYXZhdGFyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZWFCZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzJhNzhkNiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE0MjEzZCIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImVhU2tpbiIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y0Y2ZhZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2U3YjQ4ZiIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImVhSGFpciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzNhMmEyNiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFlMTUxMyIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8Y2xpcFBhdGggaWQ9ImVhQ2xpcCI+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNjAiLz48L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBjbGlwLXBhdGg9InVybCgjZWFDbGlwKSI+CiAgICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjYwIiByPSI2MCIgZmlsbD0idXJsKCNlYUJnKSIvPgogICAgPCEtLSBkYXRhIGdyaWQgLyBjaXJjdWl0IGFjY2VudHMgLS0+CiAgICA8ZyBzdHJva2U9IiM5ZmM0ZjUiIHN0cm9rZS1vcGFjaXR5PSIuMTgiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSI+CiAgICAgIDxwYXRoIGQ9Ik04IDM0aDE2bDYtNmgxMiIvPjxwYXRoIGQ9Ik0xMTIgMzBIOTZsLTYgNkg4MCIvPjxwYXRoIGQ9Ik02IDc2aDEyIi8+PHBhdGggZD0iTTExNCA3NGgtMTIiLz4KICAgIDwvZz4KICAgIDxnIGZpbGw9IiM5ZmU3ZmYiIGZpbGwtb3BhY2l0eT0iLjQ1Ij48Y2lyY2xlIGN4PSI0MiIgY3k9IjI4IiByPSIxLjYiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjM2IiByPSIxLjYiLz48Y2lyY2xlIGN4PSIxOCIgY3k9Ijc2IiByPSIxLjQiLz48Y2lyY2xlIGN4PSIxMDIiIGN5PSI3NCIgcj0iMS40Ii8+PC9nPgogICAgPCEtLSBoYWlyIChiYWNrKSAtLT4KICAgIDxwYXRoIGQ9Ik0zMyA2MGMtMy0yNCA5LTM4IDI3LTM4czMwIDE0IDI3IDM4Yy0xIDEwIDIgMjAgNiAyOEgyN2M0LTggNy0xOCA2LTI4eiIgZmlsbD0idXJsKCNlYUhhaXIpIi8+CiAgICA8IS0tIGJsYXplciAmIHNob3VsZGVycyAtLT4KICAgIDxwYXRoIGQ9Ik0xNCAxMjJjMy0yMiAyMC0zNCA0Ni0zNHM0MyAxMiA0NiAzNHoiIGZpbGw9IiMxYjJiNTIiLz4KICAgIDxwYXRoIGQ9Ik00NCA5MGwxNiAyMiAxNi0yMmMtNS0yLTEwLTMtMTYtM3MtMTEgMS0xNiAzeiIgZmlsbD0iI2ZmZiIvPgogICAgPHBhdGggZD0iTTQ0IDkwbC04IDQgMTQgMjIgMTAtNHpNNzYgOTBsOCA0LTE0IDIyLTEwLTR6IiBmaWxsPSIjMjIzODZiIi8+CiAgICA8IS0tIG5lY2sgLS0+CiAgICA8cGF0aCBkPSJNNTIgNzBoMTZ2MTRjMCA0LTQgNy04IDdzLTgtMy04LTd6IiBmaWxsPSIjZGNhNjg0Ii8+CiAgICA8IS0tIGZhY2UgLS0+CiAgICA8ZWxsaXBzZSBjeD0iNjAiIGN5PSI1NiIgcng9IjE4LjUiIHJ5PSIyMS41IiBmaWxsPSJ1cmwoI2VhU2tpbikiLz4KICAgIDwhLS0gaGFpciAoZnJvbnQsIHNpZGUtc3dlcHQpIC0tPgogICAgPHBhdGggZD0iTTQxIDU0YzAtMTYgOS0yNSAyMS0yNSAxMCAwIDE4IDYgMTkgMTgtNi03LTE1LTEwLTI0LTktNiAxLTExIDYtMTYgMTZ6IiBmaWxsPSJ1cmwoI2VhSGFpcikiLz4KICAgIDxwYXRoIGQ9Ik00MSA1NGMxLTYgMy0xMSA3LTE1LTEgNi0yIDExLTEgMTh6IiBmaWxsPSIjMmExZTFiIi8+CiAgICA8IS0tIGJyb3dzICYgZXllcyAtLT4KICAgIDxwYXRoIGQ9Ik00OC41IDUwLjVjMi41LTEuNiA1LjUtMS42IDcuNS0uMk02NCA1MC4zYzItMS40IDUtMS40IDcuNS4yIiBzdHJva2U9IiMyYTFlMWIiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICAgIDxlbGxpcHNlIGN4PSI1Mi41IiBjeT0iNTYiIHJ4PSIyLjMiIHJ5PSIyLjYiIGZpbGw9IiMxZjJhNDQiLz48ZWxsaXBzZSBjeD0iNjcuNSIgY3k9IjU2IiByeD0iMi4zIiByeT0iMi42IiBmaWxsPSIjMWYyYTQ0Ii8+CiAgICA8Y2lyY2xlIGN4PSI1My4zIiBjeT0iNTUuMSIgcj0iLjgiIGZpbGw9IiNmZmYiLz48Y2lyY2xlIGN4PSI2OC4zIiBjeT0iNTUuMSIgcj0iLjgiIGZpbGw9IiNmZmYiLz4KICAgIDwhLS0gbm9zZSwgc21pbGUsIGNoZWVrcyAtLT4KICAgIDxwYXRoIGQ9Ik02MCA1OC41Yy0uNiAzLTEuNCA0LjYtLjIgNS40IiBzdHJva2U9IiNjOThmNmMiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik01NCA2N2MzLjYgMyA4LjQgMyAxMiAwIiBzdHJva2U9IiNiODUwNWYiIHN0cm9rZS13aWR0aD0iMS44IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICAgIDxlbGxpcHNlIGN4PSI0OC41IiBjeT0iNjMuNSIgcng9IjMiIHJ5PSIxLjgiIGZpbGw9IiNlYjhmOGYiIGZpbGwtb3BhY2l0eT0iLjM1Ii8+PGVsbGlwc2UgY3g9IjcxLjUiIGN5PSI2My41IiByeD0iMyIgcnk9IjEuOCIgZmlsbD0iI2ViOGY4ZiIgZmlsbC1vcGFjaXR5PSIuMzUiLz4KICAgIDwhLS0gQUkgaGVhZHNldCAtLT4KICAgIDxwYXRoIGQ9Ik0zOSA1NmMwLTE3IDktMjcgMjEtMjdzMjEgMTAgMjEgMjciIHN0cm9rZT0iIzlmZTdmZiIgc3Ryb2tlLXdpZHRoPSIyLjYiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPHJlY3QgeD0iMzQuNSIgeT0iNTIiIHdpZHRoPSI4IiBoZWlnaHQ9IjEzIiByeD0iNCIgZmlsbD0iIzVmZDNmZiIvPjxyZWN0IHg9Ijc3LjUiIHk9IjUyIiB3aWR0aD0iOCIgaGVpZ2h0PSIxMyIgcng9IjQiIGZpbGw9IiM1ZmQzZmYiLz4KICAgIDxyZWN0IHg9IjM2LjUiIHk9IjU1IiB3aWR0aD0iNCIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iI2U2ZmJmZiIvPjxyZWN0IHg9Ijc5LjUiIHk9IjU1IiB3aWR0aD0iNCIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iI2U2ZmJmZiIvPgogICAgPHBhdGggZD0iTTM4LjUgNjRjMCA3IDQgMTEgMTAgMTIiIHN0cm9rZT0iIzlmZTdmZiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNzYuMiIgcj0iMi40IiBmaWxsPSIjNWZkM2ZmIi8+CiAgICA8IS0tIGNoYXJ0IGJhZGdlIC0tPgogICAgPGNpcmNsZSBjeD0iOTEiIGN5PSI5MCIgcj0iMTMiIGZpbGw9IiMxYmFmN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICAgIDxyZWN0IHg9Ijg0LjYiIHk9IjkxIiB3aWR0aD0iMy4yIiBoZWlnaHQ9IjUuNCIgcng9IjEiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSI4OS40IiB5PSI4NyIgd2lkdGg9IjMuMiIgaGVpZ2h0PSI5LjQiIHJ4PSIxIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iOTQuMiIgeT0iODMuNCIgd2lkdGg9IjMuMiIgaGVpZ2h0PSIxMyIgcng9IjEiIGZpbGw9IiNmZmYiLz4KICA8L2c+Cjwvc3ZnPgo=" alt="Expression360 Analyst">
+    <div style="min-width:0"><div class="aw-name">Expression360 Analyst</div><div class="aw-st">● Online · answers from DRHP data</div></div>
+    <button class="aw-ic" id="anaClear" title="Clear chat" aria-label="Clear chat">⟲</button>
+    <button class="aw-ic" id="anaClose" title="Minimise" aria-label="Close chat">✕</button>
+  </div>
+  <div id="anaLog" aria-live="polite"></div>
+  <div id="anaChips"></div>
+  <form id="anaForm">
+    <input id="anaIn" autocomplete="off" placeholder="Ask a question…" aria-label="Ask a question">
+    <button aria-label="Send"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg></button>
+  </form>
+  <div class="aw-foot">Rule-based assistant · uses only this dashboard's data · not investment advice</div>
+</div>
+
+<style>
+#anaLaunch{position:fixed;right:22px;bottom:22px;z-index:1000;width:64px;height:64px;padding:0;border-radius:50%;border:3px solid #fff;background:var(--navy);box-shadow:0 10px 28px rgba(20,33,61,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s}
+#anaLaunch:hover{transform:scale(1.06)}
+#anaBadge{position:absolute;top:-2px;right:-2px;background:var(--s2);color:#fff;font-size:11px;font-weight:700;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid #fff}
+#anaTip{position:fixed;right:98px;bottom:38px;z-index:999;background:#fff;border:1px solid var(--line);box-shadow:0 8px 24px rgba(20,33,61,.15);border-radius:12px;padding:9px 13px;font-size:12.5px;color:var(--ink);max-width:230px}
+#anaWin{position:fixed;right:22px;bottom:94px;z-index:1001;width:390px;height:600px;max-height:calc(100vh - 120px);background:#fff;border-radius:18px;box-shadow:0 24px 60px rgba(20,33,61,.28);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.98);pointer-events:none;transition:opacity .18s,transform .18s;border:1px solid var(--line)}
+#anaWin.open{opacity:1;transform:none;pointer-events:auto}
+.aw-head{display:flex;align-items:center;gap:10px;padding:13px 14px;background:var(--navy);color:#fff}
+.aw-av{width:40px;height:40px;flex-shrink:0;border-radius:50%;border:2px solid rgba(255,255,255,.7);background:#fff}
+.arow{display:flex;gap:8px;align-items:flex-end;align-self:flex-start;max-width:94%}
+.arow img{width:28px;height:28px;border-radius:50%;flex-shrink:0}
+.arow .amsg.b{max-width:100%;min-width:0}
+.aw-name{font-weight:700;font-size:14.5px}
+.aw-st{font-size:11px;color:#8fe0b9}
+.aw-ic{margin-left:auto;background:rgba(255,255,255,.1);border:0;color:#fff;width:30px;height:30px;border-radius:8px;cursor:pointer;font-size:14px}
+.aw-ic+.aw-ic{margin-left:6px}
+.aw-ic:hover{background:rgba(255,255,255,.2)}
+#anaLog{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:#f7f8fa}
+#anaChips{display:flex;gap:6px;overflow-x:auto;padding:8px 10px;border-top:1px solid var(--line);background:#fff;scrollbar-width:thin}
+#anaForm{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:#fff}
+#anaIn{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:13.5px;outline:none}
+#anaIn:focus{border-color:var(--s1)}
+#anaForm button{flex-shrink:0;width:42px;border:0;border-radius:10px;background:var(--s1);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.aw-foot{font-size:10.5px;color:var(--ink3);text-align:center;padding:0 10px 8px;background:#fff}
+.amsg{max-width:90%;padding:9px 12px;border-radius:14px;font-size:12.8px;line-height:1.5}
+.amsg.u{align-self:flex-end;background:var(--s1);color:#fff;border-bottom-right-radius:4px}
+.amsg.b{align-self:flex-start;background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;color:var(--ink)}
+.amsg.b table{margin:6px 0 2px;font-size:11.5px;width:100%}
+.amsg.b th,.amsg.b td{padding:4px 6px}
+.amsg.b .src{font-size:10.5px;color:var(--ink3);margin-top:6px}
+.amsg.b .src a{color:var(--s1)}
+.amsg.b ul{margin:5px 0;padding-left:17px}
+.amsg.b li{margin:2px 0}
+.amsg.b .tw{overflow-x:auto}
+.achip{flex-shrink:0;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 10px;font-size:11.5px;cursor:pointer;color:var(--ink2);white-space:nowrap}
+.achip:hover{border-color:var(--s1);color:var(--s1)}
+.typing span{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--ink3);margin-right:3px;animation:tb 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes tb{0%,60%,100%{opacity:.3}30%{opacity:1}}
+@media(max-width:560px){#anaWin{right:0;left:0;bottom:0;width:100%;height:100%;max-height:100%;border-radius:0}#anaTip{display:none}#anaLaunch{right:16px;bottom:16px}}
+@media print{#anaLaunch,#anaWin,#anaTip{display:none}}
+</style>
+
+
 <script>
 /* ============ DATA (₹ Cr) ============ */
 const P=['FY23','FY24','FY25','H1 FY26'];
@@ -395,6 +462,217 @@ const row=(l,arr,fmt=f2,cls='')=>`<tr class="${cls}"><td>${l}</td>${arr.map(v=>`
 const head='<thead><tr><th>₹ Cr</th>'+P.map(p=>`<th>${p}</th>`).join('')+'</tr></thead>';
 plTbl.innerHTML='<table>'+head+'<tbody>'+row('Revenue from operations',D.rev)+row('Cost of services',D.cos)+row('  % of revenue',cosPct,v=>f2(v)+'%','sub')+row('Employee benefit expense',D.emp)+row('Other opex (derived)',oth)+row('Adj. EBITDA',D.ebitda)+row('  EBITDA margin',em,v=>f2(v)+'%','sub')+row('PAT',D.pat)+row('  PAT margin',pm,v=>f2(v)+'%','sub')+row('Total expenses',D.totExp)+'</tbody></table>';
 bsTbl.innerHTML='<table>'+head+'<tbody>'+row('Operating cash flow',D.cfo)+row('Investing cash flow',D.cfi)+row('Financing cash flow',D.cff)+row('CFO ÷ PAT',D.cfo.map((v,i)=>v/D.pat[i]),v=>v.toFixed(2)+'x','sub')+row('Total assets',D.assets)+row('Net worth',D.equity)+row('Borrowings',D.debt)+row('Debt / equity',D.debt.map((v,i)=>v/D.equity[i]),v=>v.toFixed(2)+'x','sub')+row('Receivable days',D.dso,v=>v)+'</tbody></table>';
+
+/* =====================================================================
+   EXPRESSION360 ANALYST: rule-based finance Q&A over the dashboard data
+   ===================================================================== */
+(function(){
+const PL=['FY23','FY24','FY25','H1 FY26'];
+const fmtU={cr:v=>(v<0?'−':'')+'₹'+f2(Math.abs(v))+' Cr',pct:v=>f2(v)+'%',days:v=>Math.round(v)+' days',x:v=>v.toFixed(2)+'×',n:v=>Math.round(v).toLocaleString('en-IN'),rs:v=>'₹'+f2(v)};
+const fv=(m,v)=>v===null||v===undefined||isNaN(v)?'n/a':fmtU[m.u](v);
+const sum=a=>a.reduce((x,y)=>x+y,0);
+const othL=D.liab.map((v,i)=>v-D.debt[i]);
+const netc=D.cfo.map((v,i)=>v+D.cfi[i]+D.cff[i]);
+const avgEq=[null,(D.equity[0]+D.equity[1])/2,(D.equity[1]+D.equity[2])/2,(D.equity[2]+D.equity[3])/2];
+const LINK={kpis:'Headline KPIs',pl:'P&amp;L &amp; Margins',cash:'Cash &amp; Balance Sheet',customers:'Customers &amp; Risk',market:'Market &amp; Peers',insights:'P&amp;L Insights',mins:'Market Insights',swot:'SWOT',data:'Data &amp; Notes'};
+const see=s=>`<div class="src">📊 See: <a href="#${s}" class="anaJump">${LINK[s]}</a> · Source: restated DRHP</div>`;
+
+/* ---------- metric catalogue ---------- */
+const M=[
+ {k:'rev',n:'Revenue from operations',u:'cr',v:D.rev,flow:1,al:['revenue from operations','revenue','sales','turnover','top line','topline'],def:'Money earned from the core business (excludes other income).',s:'pl'},
+ {k:'ebitdam',n:'Adj. EBITDA margin',u:'pct',v:em,calc:'FY25 = ₹38.95 Cr ÷ ₹280.23 Cr × 100 = <b>13.90%</b>.',al:['ebitda margin','operating margin','ebitda %'],def:'Adj. EBITDA ÷ Revenue × 100: operating profit per ₹100 of sales.',s:'pl'},
+ {k:'patm',n:'PAT margin',u:'pct',v:pm,calc:'FY25 = ₹27.20 Cr ÷ ₹280.23 Cr × 100 = <b>9.71%</b>.',al:['pat margin','net margin','net profit margin','profit margin'],def:'PAT ÷ Revenue × 100: final profit per ₹100 of sales.',s:'pl'},
+ {k:'ebitda',n:'Adj. EBITDA',u:'cr',v:D.ebitda,flow:1,al:['adjusted ebitda','adj ebitda','ebitda','operating profit'],def:'Earnings before interest, tax, depreciation and amortisation, adjusted for one-offs: the operating profit of the business.',s:'pl'},
+ {k:'eps',n:'EPS (basic)',u:'rs',v:[null,null,4.54,null],al:['earnings per share','eps'],def:'PAT ÷ number of shares. FY25 basic EPS ₹4.54.',s:'market'},
+ {k:'pat',n:'PAT (net profit)',u:'cr',v:D.pat,flow:1,al:['profit after tax','net profit','net income','bottom line','pat','profit','earnings'],def:'Profit After Tax: the bottom line after all costs, interest and tax.',s:'pl'},
+ {k:'cosp',n:'Cost of services % of revenue',u:'pct',v:cosPct,al:['cos %','cos as % of revenue','cost of services %','cost of services as % of revenue','procurement %'],def:'Cost of services ÷ Revenue × 100: vendor cost per ₹100 of revenue.',s:'pl'},
+ {k:'cos',n:'Cost of services',u:'cr',v:D.cos,flow:1,pct:cosPct,al:['cost of services','cost of sales','direct cost','direct costs','procurement','vendor cost','vendor costs','cos'],def:'Direct cost of delivering projects: media buying, fabrication, production and third-party vendors.',s:'pl'},
+ {k:'emp',n:'Employee benefit expense',u:'cr',v:D.emp,flow:1,pct:empPct,al:['employee benefit','employee cost','employee','staff cost','staff','salaries','salary','payroll','manpower','people cost','headcount cost'],def:'Salaries, wages and benefits for employees.',s:'pl'},
+ {k:'oth',n:'Other opex (derived)',u:'cr',v:oth,flow:1,pct:othPct,al:['other opex','other operating expenses','other expenses','overheads','overhead','admin','rent','travel'],def:'Revenue − Cost of services − Employee cost − Adj. EBITDA (rent, admin, travel etc.).',s:'pl'},
+ {k:'totexp',n:'Total expenses',u:'cr',v:D.totExp,flow:1,al:['total expenses','total expenditure','total cost','total costs'],def:'All expenses, including D&amp;A and finance cost.',s:'pl'},
+ {k:'cashconv',n:'Cash conversion (CFO ÷ PAT)',u:'x',v:D.cfo.map((v,i)=>v/D.pat[i]),calc:'FY25 = CFO −₹9.55 Cr ÷ PAT ₹27.20 Cr = <b>−0.35×</b>. Cumulative FY23–H1 FY26 = ₹32.67 ÷ ₹68.79 = <b>0.47×</b>.',al:['cash conversion','cfo to pat','cfo/pat','profit to cash','profit into cash','cash vs profit','earnings quality'],def:'Operating cash flow ÷ PAT: how much profit actually arrived as cash. Above 1.0× is strong; below 0.8× needs attention.',s:'cash'},
+ {k:'cfo',n:'Operating cash flow (CFO)',u:'cr',v:D.cfo,flow:1,al:['cash flow from operations','operating cash flow','cash from operations','operating activities','operating cash','cfo','ocf'],def:'Cash collected from customers minus cash paid to vendors, staff and taxes.',s:'cash'},
+ {k:'cfi',n:'Investing cash flow (CFI)',u:'cr',v:D.cfi,flow:1,al:['investing activities','investing cash flow','investing','capex','capital expenditure','cfi'],def:'Cash spent on (−) or received from (+) long-term assets and investments.',s:'cash'},
+ {k:'cff',n:'Financing cash flow (CFF)',u:'cr',v:D.cff,flow:1,al:['financing activities','financing cash flow','financing','cff','loan repayment','repayment'],def:'Cash from (+) or repaid to (−) lenders and shareholders, including interest.',s:'cash'},
+ {k:'netc',n:'Net change in cash',u:'cr',v:netc,flow:1,al:['net change in cash','net cash','change in cash','cash balance','cash position'],def:'CFO + CFI + CFF.',s:'cash'},
+ {k:'de',n:'Debt / equity',u:'x',v:D.debt.map((v,i)=>v/D.equity[i]),calc:'H1 FY26 = Debt ₹2.63 Cr ÷ Net worth ₹72.82 Cr = <b>0.04×</b>.',al:['debt to equity','debt-to-equity','debt equity','d/e','de ratio','leverage','gearing'],def:'Borrowings ÷ net worth. Lower means less financial risk.',s:'cash'},
+ {k:'roe',n:'Return on equity (RoE)',u:'pct',v:[null,D.pat[1]/avgEq[1]*100,68.05,D.pat[3]*2/avgEq[3]*100],calc:'FY25 = PAT ₹27.20 Cr ÷ average equity ((₹26.40 + ₹53.55) ÷ 2 = ₹39.98 Cr) × 100 = <b>68.0%</b>.',al:['return on equity','roe'],def:'PAT ÷ average shareholders\' equity × 100. FY25 disclosed 68.05%. H1 FY26 is annualised.',s:'market'},
+ {k:'ronw',n:'Return on net worth (RoNW)',u:'pct',v:[D.pat[0]/D.equity[0]*100,D.pat[1]/D.equity[1]*100,50.80,null],calc:'FY25 = PAT ₹27.20 Cr ÷ year-end net worth ₹53.55 Cr × 100 = <b>50.8%</b>.',al:['return on net worth','ronw'],def:'PAT ÷ year-end net worth × 100. FY25 disclosed 50.80%.',s:'market'},
+ {k:'roce',n:'Return on capital employed (RoCE)',u:'pct',v:[null,null,68.07,null],al:['return on capital employed','return on capital','roce'],def:'EBIT ÷ (equity + debt) × 100. Only FY25 (68.07%) is disclosed.',s:'market'},
+ {k:'nav',n:'NAV per share',u:'rs',v:[null,null,8.95,null],al:['net asset value','book value per share','nav'],def:'Net worth ÷ number of shares. FY25 ₹8.95.',s:'market'},
+ {k:'equity',n:'Net worth (equity)',u:'cr',v:D.equity,al:['shareholders funds','shareholder funds','net worth','networth','equity','book value'],def:'Shareholders\' funds: share capital + retained profits.',s:'cash'},
+ {k:'debt',n:'Total borrowings',u:'cr',v:D.debt,al:['borrowings','borrowing','debt','loans','loan'],def:'Bank and other borrowings.',s:'cash'},
+ {k:'liab',n:'Total liabilities',u:'cr',v:D.liab,al:['total liabilities','liabilities','payables'],def:'Everything owed: debt + vendor payables + other liabilities.',s:'cash'},
+ {k:'assets',n:'Total assets',u:'cr',v:D.assets,al:['total assets','assets','balance sheet size'],def:'Everything the company owns: receivables, cash, fixed assets etc.',s:'cash'},
+ {k:'dso',n:'Trade receivable days (DSO)',u:'days',v:D.dso,calc:'Each day of DSO ≈ ₹0.89 Cr of cash (run-rate revenue ₹323.2 Cr ÷ 365). 85 days ≈ ₹75 Cr tied up in receivables.',al:['days sales outstanding','receivable days','receivables days','debtor days','collection period','dso','receivables','receivable','collections','collection','debtors'],def:'Trade receivables ÷ Revenue × days: average days customers take to pay. Lower is better.',s:'cash'},
+ {k:'top10',n:'Top-10 client revenue share',u:'pct',v:D.top10,al:['top 10','top ten','top-10','top10'],def:'Revenue from the 10 largest clients ÷ total revenue.',s:'customers'},
+ {k:'top5',n:'Top-5 client revenue share',u:'pct',v:D.top5,al:['top 5','top five','top-5','top5'],def:'Revenue from the 5 largest clients ÷ total revenue.',s:'customers'},
+ {k:'b2g',n:'Government / PSU revenue share',u:'pct',v:D.b2g,al:['b2g','b2psu','psu','government','govt'],def:'Share of revenue from government ministries and public-sector undertakings.',s:'customers'},
+ {k:'clients',n:'Active client count',u:'n',v:[null,null,235,126],note:'H1 FY26 covers 6 months vs 12 for FY25, so this is not a like-for-like decline.',al:['client count','customer count','number of clients','number of customers','active clients','clients','customers'],def:'Clients billed in the period. H1 FY26 covers 6 months, so it is not comparable with FY25.',s:'customers'}
+];
+const byK=Object.fromEntries(M.map(m=>[m.k,m]));
+const ALIAS=M.flatMap(m=>m.al.map(a=>[a,m.k])).sort((a,b)=>b[0].length-a[0].length);
+
+/* ---------- text helpers ---------- */
+function norm(q){return ' '+q.toLowerCase().replace(/’/g,"'").replace(/sep(tember)?\s*(20)?25/g,' h1 ').replace(/fy\s*-?\s*20(\d\d)-(\d\d)/g,'fy$2').replace(/fy\s*-?\s*20(\d\d)/g,'fy$1').replace(/fy\s+(\d\d)/g,'fy$1').replace(/\b20(2[2-5])\s*-\s*(20)?(2[3-6])\b/g,'fy$3').replace(/\b20(2[3-6])\b/g,'fy$1').replace(/[?!,;:()]/g,' ').replace(/\s+/g,' ')+' '}
+const has=(t,...w)=>w.some(x=>t.includes(x));
+function findMetrics(t){let s=t,out=[];for(const[a,k]of ALIAS){const re=new RegExp('(^|[^a-z0-9])'+a.replace(/[.*+?^${}()|[\]\\\/]/g,'\\$&')+'(?=[^a-z0-9]|$)');if(re.test(s)){if(!out.includes(k))out.push(k);s=s.replace(re,'$1 ')}}return out}
+function findPeriods(t){const p=[];const add=i=>{if(!p.includes(i))p.push(i)};
+ if(/\bfy23\b/.test(t))add(0);if(/\bfy24\b/.test(t))add(1);if(/\bfy25\b|last year|previous year|last full year/.test(t))add(2);
+ if(/\bh1\b|\bfy26\b|half year|half-year|first half|latest|current|this year|sep 2025|september 2025|six months|6 months/.test(t))add(3);return p.sort()}
+const PEERN={crayons:'Crayons Advertising',swamy:'R K Swamy',rk:'R K Swamy',graphisads:'Graphisads'};
+const isPeerQ=t=>has(t,'peer','competitor','competition','industry','crayons','swamy','graphisads','vs market','benchmark','listed compan');
+
+/* ---------- answer builders ---------- */
+function tableFor(ms,cols=[0,1,2,3]){const rows=ms.map(k=>{const m=byK[k];return`<tr><td>${m.n}</td>${cols.map(i=>`<td class="num">${fv(m,m.v[i])}</td>`).join('')}</tr>`}).join('');
+ return `<div class="tw"><table class="tbl"><thead><tr><th></th>${cols.map(i=>`<th class="num">${PL[i]}</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>`}
+function chg(m,a,b){const va=m.v[a],vb=m.v[b];if(va==null||vb==null)return'';let vbx=vb,vax=va,lbl='';
+ if(m.flow&&b===3&&a!==3){vbx=vb*2;lbl=' (H1 run-rate)'}
+ if((m.u==='cr'||m.u==='rs'||m.u==='n')&&(vax<=0||vbx<=0)){const d=vbx-vax;return `${d>=0?'+':'−'}${m.u==='n'?Math.abs(Math.round(d)):'₹'+f2(Math.abs(d))+(m.u==='cr'?' Cr':'')}${lbl}`}
+ if(m.u==='cr'||m.u==='rs'||m.u==='n'){const g=(vbx/vax-1)*100;return `${g>=0?'+':'−'}${f1(Math.abs(g))}%${lbl}`}
+ if(m.u==='pct')return `${vb-va>=0?'+':''}${f2(vb-va)} pts`;
+ if(m.u==='days')return `${vb-va>=0?'+':''}${Math.round(vb-va)} days`;
+ return `${vb-va>=0?'+':''}${(vb-va).toFixed(2)}×`}
+function trendLine(m){const idx=m.v.map((v,i)=>v==null||(m.flow&&i===3)?null:i).filter(i=>i!==null);if(idx.length<2)return'';const a=idx[0],b=idx[idx.length-1];
+ let s=`From ${PL[a]} to ${PL[b]}: ${fv(m,m.v[a])} → ${fv(m,m.v[b])} (${chg(m,a,b)}).`;
+ if(m.note)s+=` <i>${m.note}</i>`;
+ if(m.flow&&m.u==='cr'&&m.v[0]>0&&m.v[2]>0){s+=` Two-year CAGR FY23→FY25: <b>${f1((Math.pow(m.v[2]/m.v[0],.5)-1)*100)}%</b>.`}
+ return s}
+function h1note(m){return m.flow?`<br><span style="color:var(--ink3);font-size:11.5px">H1 FY26 = 6 months (Apr–Sep 2025). Run-rate (×2) = ${fv(m,m.v[3]*2)}.</span>`:''}
+function pctNote(m,i){return m.pct?` That is <b>${f2(m.pct[i])}%</b> of revenue.`:''}
+
+function ansMetric(ks,per,t){
+ const wantDef=has(t,'what is','what are','what\'s','meaning',' mean ','define','definition','full form','explain','how do you calculate','formula','calculat','how is it');
+ const wantGrowth=has(t,'growth','grow','grew','increase','decrease','change','yoy','y-o-y','cagr','trend','improve','decline','fell','rise','rose','up or down');
+ const wantMax=has(t,'highest','maximum',' max ','best year','peak',' most '),wantMin=has(t,'lowest','minimum',' min ','worst','least');
+ let out='';
+ if(ks.length===1){const m=byK[ks[0]];
+  if(wantDef)out+=`<b>${m.n}</b>: ${m.def}<br>`;
+  if((wantMax||wantMin)&&m.v.filter(v=>v!=null).length>1){const idx=m.v.map((v,i)=>[v,i]).filter(x=>x[0]!=null&&!(m.flow&&x[1]===3));idx.sort((a,b)=>wantMax?b[0]-a[0]:a[0]-b[0]);
+   out+=`${wantMax?'Highest':'Lowest'} ${m.n}: <b>${PL[idx[0][1]]}</b> at <b>${fv(m,idx[0][0])}</b>${m.flow?' (full years compared; H1 FY26 is 6 months)':''}.`;return out+tableFor(ks)+see(m.s)}
+  if(per.length===1){const i=per[0],v=m.v[i];
+   if(v==null)return out+`${m.n} is not disclosed for ${PL[i]}. Available: ${m.v.map((x,j)=>x==null?null:PL[j]+' '+fv(m,x)).filter(Boolean).join(' · ')}.`+see(m.s);
+   out+=`${m.n} in <b>${PL[i]}</b> was <b>${fv(m,v)}</b>.`+pctNote(m,i);
+   if(i>0&&m.v[i-1]!=null)out+=` Change vs ${PL[i-1]}: <b>${chg(m,i-1,i)}</b>.`;
+   if(i===3)out+=h1note(m);return out+see(m.s)}
+  if(per.length===2){const[a,b]=per;out+=`${m.n}: ${PL[a]} <b>${fv(m,m.v[a])}</b> vs ${PL[b]} <b>${fv(m,m.v[b])}</b> → <b>${chg(m,a,b)}</b>.`;if(b===3)out+=h1note(m);return out+see(m.s)}
+  if(wantDef&&m.calc)out+=`<div style="margin:4px 0"><b>Worked example:</b> ${m.calc}</div>`;
+  out+=tableFor(ks);
+  if(m.pct)out+=`<div style="font-size:11.5px;color:var(--ink2)">As % of revenue: ${m.pct.map((v,i)=>PL[i]+' '+f2(v)+'%').join(' · ')}</div>`;
+  out+='<div style="margin-top:4px">'+trendLine(m)+'</div>';
+  if(wantGrowth&&m.flow&&m.u==='cr')out+=`<div>YoY: FY24 <b>${chg(m,0,1)}</b> · FY25 <b>${chg(m,1,2)}</b> · H1 FY26 vs FY25 <b>${chg(m,2,3)}</b>.</div>`;
+  if(m.flow)out+=h1note(m);
+  return out+see(m.s)}
+ /* several metrics */
+ const cols=per.length?per:[0,1,2,3];
+ out+=(wantDef?ks.map(k=>`<b>${byK[k].n}</b>: ${byK[k].def}`).join('<br>')+'<br>':'')+tableFor(ks,cols);
+ if(ks.some(k=>byK[k].flow)&&cols.includes(3))out+='<div style="font-size:11.5px;color:var(--ink3)">H1 FY26 figures are for 6 months.</div>';
+ return out+see(byK[ks[0]].s)}
+
+/* ---------- topic answers ---------- */
+const T={
+ help:()=>`I can answer questions on Expression 360's financials (FY23 – H1 FY26). For example:<ul><li><b>Values:</b> "What was revenue in FY25?", "PAT in H1"</li><li><b>Trends &amp; growth:</b> "How has EBITDA margin changed?", "Revenue CAGR"</li><li><b>Why:</b> "Why was cash flow negative in FY25?", "Why did margins improve?"</li><li><b>Ratios:</b> RoE, RoNW, D/E, DSO, cash conversion</li><li><b>Peers:</b> "Compare RoNW with peers", "P/E of R K Swamy"</li><li><b>What-if:</b> "What if DSO is 60 days?", "Value at 20× P/E", "What if cost of services is 70%?"</li><li><b>Strategy:</b> SWOT, risks, insights, recommendations</li></ul>`,
+ summary:()=>`<b>Expression 360 at a glance</b><ul><li>Revenue ₹115.49 → ₹280.23 Cr (FY23 → FY25), 2.4×; H1 FY26 ₹161.60 Cr (run-rate ₹323.2 Cr).</li><li>Adj. EBITDA margin 8.33% → <b>17.24%</b>; PAT margin 6.56% → 11.94%.</li><li>Near debt-free: D/E <b>0.04×</b>; RoE 68.05% (FY25).</li><li>⚠️ Cash conversion only <b>${f1(cumCfo/cumPat*100)}%</b> of cumulative profit; DSO <b>85 days</b>.</li><li>⚠️ Top 10 clients = <b>84.19%</b>; 3 states = 87.20%; Govt / PSU = 97.37%.</li></ul>In short: profitable and growing, but cash collection and concentration need attention.`+see('kpis'),
+ whyMargin:()=>`<b>Why margins improved</b>: almost entirely <b>cheaper procurement</b>. Cost of services fell from 84.05% to 73.87% of revenue (+10.18 pts of margin). Employee cost added +0.31 pts, while other opex took away −1.59 pts. Net: EBITDA margin 8.33% → 17.24% (+8.9 pts).<br>Management also cites a shift toward higher-margin digital and media-planning work. Risk: if vendor costs rise again, margins fall back.`+see('pl'),
+ whyCash:()=>`<b>Why FY25 operating cash flow was negative (−₹9.55 Cr) despite ₹27.20 Cr profit</b>: large Q4 government and PSU billings were still uncollected on 31 March 2025, so receivables rose and DSO went from 44 to 63 days. Profit is booked when work is billed; cash arrives only when the client pays. In H1 FY26 DSO stretched further to 85 days, and CFO was just ₹4.19 Cr on ₹19.29 Cr PAT.`+see('cash'),
+ whyDso:()=>`<b>Why receivable days rose (44 → 63 → 85)</b>: the business is ~97% government / PSU, where payments go through sanction and approval cycles (often 60–90+ days), and billing is concentrated around large events and year-end. The data shows the trend but not which clients are slow; a <b>receivables ageing report by client</b> is needed.<br><b>Levers:</b> milestone billing, mobilisation advances, faster documentation, TReDS invoice discounting and collection-linked incentives.`+see('cash'),
+ whyRoe:()=>`<b>Why RoE / RoNW is so high (68% / 51% vs peers' 5–6%)</b>: strong profit (₹27.20 Cr) on a <b>small equity base</b> (₹53.55 Cr net worth; NAV ₹8.95 per share vs peers' ₹46–50). The asset-light model needs little capital, and there is almost no debt. Watch: RoE is trending down (77% FY24 → 68% FY25 → ~61% H1 annualised) as retained profits enlarge equity.`+see('market'),
+ whyConc:()=>`<b>Concentration</b>: top 10 clients = <b>84.19%</b> and top 5 = 76.81% of H1 FY26 revenue (60.47% / 40.89% in FY25). Three states (MH, DL, WB) = 87.20%. This comes from the B2G model: a few large ministry and PSU mandates make up most of the revenue. Half-year figures exaggerate it, so check the full-year FY26 numbers. Losing one top-5 client could cut revenue by double digits.`+see('customers'),
+ whyGrowth:()=>`<b>Growth is slowing</b>: +93.5% (FY24) → +25.4% (FY25) → about +${f1(runGr)}% on the H1 run-rate. The base is larger, the business depends on the tender pipeline, and active clients narrowed. Management's plan is digital cross-sell into exhibition accounts. Track pipeline coverage, win rate and deal size.`+see('pl'),
+ swot:(part)=>{const S={s:['Margin momentum: EBITDA 8.33% → 17.24%','Near debt-free: D/E 0.04×','High returns: RoE 68%, RoCE 68%','Asset-light: capex ₹1–4 Cr a year','Institutional access: ministries and Maharatna PSUs','Largest in the DRHP peer set (₹280 Cr)'],w:['Top 10 clients = 84% of revenue','3 states = 87% of revenue','DSO 85 days; weak cash conversion','88–92% of costs with vendors','83–98% Govt / PSU','Other opex creeping: 3.2% → 4.8%'],o:['~₹1,477 Cr Union publicity allocation (FY27)','Digital and media-planning cross-sell','New state governments beyond MH, DL, WB','Private sector: BFSI, healthcare, energy','Listing visibility, larger tenders','Flagship events (e.g. India Energy Week)'],t:['Tender and budget cycles, policy shifts','Payment delays from ministries and PSUs','L1 price competition','100% OFS, so no fresh capital','Vendor cost inflation','Loss of a top-5 client']};
+  const N={s:'💪 Strengths',w:'⚠️ Weaknesses',o:'🚀 Opportunities',t:'🛑 Threats'};const parts=part?[part]:['s','w','o','t'];
+  return parts.map(p=>`<b>${N[p]}</b><ul>${S[p].map(x=>`<li>${x}</li>`).join('')}</ul>`).join('')+see('swot')},
+ insights:()=>`<b>Top actions for the CEO / CFO</b><ol style="margin:5px 0;padding-left:18px"><li><b>Turn profit into cash:</b> CFO ÷ PAT ≥ 0.8×; DSO ≤ 65 days (frees ≈ ₹${f1(20*perDay)} Cr).</li><li><b>Lock in procurement gains:</b> vendor rate contracts; cost of services ≤ 75% of revenue.</li><li><b>Cut overhead creep:</b> opex + employee ≤ 8% of revenue.</li><li><b>Diversify:</b> new states, private sector; top-10 share &lt; 65%.</li><li><b>Build the next growth engine:</b> digital cross-sell; pipeline coverage ≥ 3×.</li></ol>`+see('insights'),
+ risks:()=>`<b>Key risks</b><ul><li><b>Concentration:</b> top 10 = 84%, 3 states = 87%, Govt / PSU = 97%.</li><li><b>Cash:</b> DSO 85 days; FY25 CFO −₹9.55 Cr.</li><li><b>Tender dependence:</b> budget freezes, policy changes, L1 pricing.</li><li><b>Vendor dependence:</b> 88–92% of cost base.</li><li><b>No fresh capital:</b> IPO is 100% OFS by the promoter.</li></ul>`+see('swot'),
+ ipo:()=>`<b>IPO facts</b><ul><li>Structure: <b>100% Offer for Sale</b> of 1.50 crore shares by promoter Mohit Gupta, so no new money enters the company.</li><li>FY25 EPS ₹4.54; NAV ₹8.95; ≈ ${f2(shares)} Cr shares (PAT ÷ EPS).</li><li>Peer P/E: Crayons 8.77×, Graphisads 9.64×, R K Swamy 27.40×.</li><li>Illustrative: at 15× → ₹${f1(4.54*15)}/share, market cap ≈ ₹${Math.round(4.54*15*shares)} Cr; OFS ≈ ₹${Math.round(4.54*15*1.5)} Cr.</li></ul>The actual P/E will be set by the price band. Not investment advice.`+see('market'),
+ mix:()=>`<b>Service-line mix, H1 FY26</b><ul><li>Events &amp; Exhibitions: ₹82.85 Cr (51.27%)</li><li>Marketing &amp; Communication: ₹73.42 Cr (45.43%)</li><li>Miscellaneous: ≈ ₹5.3 Cr (3.30%)</li></ul>Strategy: cross-sell higher-margin digital and media planning into exhibition accounts.`+see('customers'),
+ geo:()=>`<b>Geography</b>: campaigns executed in 25 states + 5 UTs, but <b>Maharashtra + Delhi + West Bengal</b> = 76.53% of FY25 revenue and <b>87.20%</b> of H1 FY26. Expanding into new state governments is a key diversification lever.`+see('customers'),
+ market:()=>`<b>Market context</b><ul><li>Union government allocated ~₹1,477 Cr for information &amp; publicity in FY27; ministry electronic-media spend ₹406.12 Cr in FY25.</li><li>Positioning: tender-driven government pavilions and outreach, closer to Graphisads and Crayons than to R K Swamy's commercial / data model.</li><li>Clients span defence, energy / oil &amp; gas (incl. Maharatna PSUs), BFSI, healthcare and agriculture.</li></ul>`+see('market'),
+ costs:()=>`<b>Cost structure (per ₹100 of revenue)</b>`+`<div class="tw"><table class="tbl"><thead><tr><th></th>${PL.map(p=>`<th class="num">${p}</th>`).join('')}</tr></thead><tbody>`+[['Cost of services',cosPct],['Employee',empPct],['Other opex',othPct],['Adj. EBITDA',em]].map(([l,a])=>`<tr><td>${l}</td>${a.map(v=>`<td class="num">${f2(v)}</td>`).join('')}</tr>`).join('')+`</tbody></table></div>Asset-light, vendor-driven model: about three-quarters of every rupee goes to third-party procurement.`+see('pl'),
+ cashflow:()=>tableFor(['cfo','cfi','cff','netc','cashconv'])+`Operating cash was strong in FY23–FY24, turned negative in FY25 (receivables build-up) and recovered slightly in H1 FY26. Investing is small (asset-light); financing is negative every period (loan repayment).`+see('cash'),
+ balance:()=>tableFor(['assets','equity','debt','liab','de'])+`The balance sheet grew ~2.9× since FY23, funded by retained profits, not debt.`+see('cash')
+};
+
+function peerAns(t,ks){const want=ks.filter(k=>['ronw','roe','eps','nav','rev'].includes(k));let key=want[0]||(has(t,'p/e','pe ratio','pe ','multiple','valuation')?'pe':null);
+ const names=Object.keys(PEERN).filter(n=>t.includes(n)).map(n=>PEERN[n]);
+ const list=PEERS.filter(p=>!names.length||names.includes(p.n)||p.n==='Expression 360');
+ const head='<div class="tw"><table class="tbl"><thead><tr><th>Company</th><th class="num">Revenue ₹ Cr</th><th class="num">EPS ₹</th><th class="num">NAV ₹</th><th class="num">RoNW</th><th class="num">P/E</th></tr></thead><tbody>'+list.map(p=>`<tr${p.n==='Expression 360'?' style="font-weight:700"':''}><td>${p.n}</td><td class="num">${f2(p.rev)}</td><td class="num">${f2(p.eps)}</td><td class="num">${f2(p.nav)}</td><td class="num">${f2(p.ronw)}%</td><td class="num">${p.pe?f2(p.pe)+'×':'IPO'}</td></tr>`).join('')+'</tbody></table></div>';
+ let msg='';if(key==='ronw'||key==='roe')msg='Expression 360\'s RoNW (<b>50.80%</b>) is about 8–9× the peers (5.41–6.43%), helped by a small equity base.';
+ else if(key==='pe')msg='Peer P/E ranges from <b>8.77×</b> (Crayons) to <b>27.40×</b> (R K Swamy). Expression 360\'s P/E will be set by the IPO price band.';
+ else if(key==='rev')msg='Expression 360 is the <b>largest</b> in the DRHP peer set by revenue (₹280.23 Cr).';
+ else if(key==='eps')msg='Expression 360 has the highest EPS (₹4.54) in the set.';
+ else msg='Expression 360 leads the peer set on revenue, EPS and RoNW; peers trade at 8.77×–27.40× P/E.';
+ return `<b>Peer comparison (FY25, DRHP peer table)</b><br>${msg}${head}<div style="font-size:11px;color:var(--ink3)">Peer figures are standalone, as disclosed; verify against exchange filings.</div>`+see('market')}
+
+function whatIf(t){const nums=(t.match(/\d+(\.\d+)?/g)||[]).map(Number);
+ if(has(t,'dso','receivable','collection','debtor')&&nums.length){const d=nums.find(n=>n>=10&&n<=200);if(d!=null){const c=(85-d)*perDay;
+  return `<b>What-if: DSO at ${d} days</b><br>${c>=0?'Cash released':'Additional cash tied up'}: <b>₹${f1(Math.abs(c))} Cr</b> vs today's 85 days (≈ ₹${f2(perDay)} Cr per day, on run-rate revenue of ₹323.2 Cr).${c>0?` That is ≈ ${f1(c/(D.pat[3]*2)*100)}% of annualised PAT and ${f1(c/D.debt[3])}× total debt.`:''}`+see('cash')}}
+ if(has(t,'p/e',' pe ','multiple','times earnings','valuation','value at','worth at','market cap')&&nums.length){const m=nums.find(n=>n>=2&&n<=80);if(m!=null){const px=4.54*m;
+  return `<b>What-if: P/E of ${m}×</b><br>Value per share = ₹4.54 × ${m} = <b>₹${f1(px)}</b><br>Market cap ≈ ₹${f1(px)} × ${f2(shares)} Cr shares = <b>₹${Math.round(px*shares).toLocaleString('en-IN')} Cr</b><br>OFS (1.50 Cr shares) ≈ <b>₹${Math.round(px*1.5).toLocaleString('en-IN')} Cr</b>; P/B ${f1(px/8.95)}×.<br><span style="font-size:11.5px;color:var(--ink3)">Illustrative arithmetic only, not a price target or advice.</span>`+see('market')}}
+ if(has(t,'cost of services','cos','procurement','vendor')&&nums.length){const c=nums.find(n=>n>=50&&n<=95);if(c!=null){const nm=em[3]+(cosPct[3]-c),eb=nm/100*D.rev[3]*2;
+  return `<b>What-if: cost of services at ${c}% of revenue</b><br>EBITDA margin ≈ ${f2(em[3])}% ${c<cosPct[3]?'+':'−'} ${f2(Math.abs(cosPct[3]-c))} pts = <b>${f2(nm)}%</b> (vs 17.24% in H1 FY26).<br>On run-rate revenue of ₹323.2 Cr → Adj. EBITDA ≈ <b>₹${f1(eb)} Cr</b> (vs ₹55.72 Cr). Each 1 pt of COS ≈ ₹3.2 Cr of annual EBITDA.`+see('pl')}}
+ if(has(t,'revenue','sales','grow')&&nums.length){const g=nums.find(n=>n>0&&n<=200);if(g!=null){const r=D.rev[2]*(1+g/100);
+  return `<b>What-if: revenue grows ${g}% on FY25</b><br>Revenue = ₹280.23 × ${(1+g/100).toFixed(2)} = <b>₹${f1(r)} Cr</b>.<br>At H1 FY26 margins: Adj. EBITDA ≈ <b>₹${f1(r*em[3]/100)} Cr</b> (17.24%), PAT ≈ <b>₹${f1(r*pm[3]/100)} Cr</b> (11.94%).<br><span style="font-size:11.5px;color:var(--ink3)">Simple scaling; ignores mix and cost changes.</span>`+see('pl')}}
+ return null}
+
+function answer(q){const t=norm(q);if(t.trim().length<2)return T.help();
+ if(/^\s*(hi|hello|hey|namaste|good (morning|afternoon|evening))\b/.test(t))return 'Hello! 👋 I\'m Expression360 Analyst. Ask me about Expression 360\'s revenue, margins, cash flow, ratios, peers or risks.<br>'+T.help();
+ if(has(t,'thank'))return'You\'re welcome! Anything else you\'d like to know?';
+ if(has(t,' help ','what can you','what can i ask','how to use'))return T.help();
+ if(has(t,'what if','what-if','if dso','if receivable','if p/e','if pe ','at a p/e','at p/e','if cost','if cos','if revenue','scenario','sensitivity','assume','suppose','value at','worth at')){const w=whatIf(t);if(w)return w}
+ if(/\d+\s*(x|×|times)(?=\s|$)/.test(t)&&has(t,'value','worth','price','valuation','p/e',' pe ')){const w=whatIf(t+' p/e ');if(w)return w}
+ if(has(t,'swot'))return T.swot();
+ if(has(t,'strength'))return T.swot('s');if(has(t,'weakness'))return T.swot('w');if(has(t,'opportunit'))return T.swot('o');if(has(t,'threat'))return T.swot('t');
+ if(has(t,'risk','red flag','concern','worry'))return T.risks();
+ if(has(t,'insight','recommend',' action','what should','priorit','suggest',' fix ','next steps','to do'))return T.insights();
+ const ks=findMetrics(t);
+ if(has(t,'why','reason','driver','cause','explain the','how come')){
+  if(has(t,'margin','profitab','ebitda','cost of services','procurement'))return T.whyMargin();
+  if(has(t,'cash','cfo','negative','operating cash'))return T.whyCash();
+  if(has(t,'dso','receivable','collection','debtor'))return T.whyDso();
+  if(has(t,'roe','ronw','return'))return T.whyRoe();
+  if(has(t,'concentration','client','customer','state','government','psu'))return T.whyConc();
+  if(has(t,'growth','slow','revenue'))return T.whyGrowth()}
+ if(has(t,'ipo','ofs','offer for sale','listing','promoter','price band','market cap'))return T.ipo();
+ if(isPeerQ(t)||(has(t,'compare','comparison',' vs ','versus')&&ks.some(k=>['ronw','eps','nav'].includes(k))))return peerAns(t,ks);
+ if(has(t,'p/e',' pe ','pe ratio','pe multiple','valuation','company worth','how much is it worth'))return peerAns(t,['pe']);
+ if(has(t,'summary','overview','overall','how is the company','how is expression','how is experion','performance','health','snapshot','tell me about','key numbers','highlights'))return T.summary();
+ if(has(t,'service mix','service line','segment','business mix','revenue mix','events','exhibition','marketing & communication','marketing and communication'))return T.mix();
+ if(has(t,'geograph',' state ',' states ','state-wise','statewise','maharashtra','delhi','west bengal','region'))return T.geo();
+ if(has(t,'concentration'))return ansMetric(['top5','top10','b2g'],findPeriods(t),t)+'<br>'+'';
+ if(has(t,'market size','government spend','publicity','budget','competitive','positioning'))return T.market();
+ if(has(t,'cost structure','cost breakdown','expense breakdown','where does the money go','costs','expenses')&&!ks.some(k=>['cos','emp','oth','totexp','cosp'].includes(k)))return T.costs();
+ if(has(t,'cash flow','cashflow','cash flows')&&!ks.some(k=>['cfo','cfi','cff','netc','cashconv'].includes(k)))return T.cashflow();
+ if(has(t,'balance sheet'))return T.balance();
+ if(has(t,'margin','margins','profitability')&&!ks.some(k=>['ebitdam','patm'].includes(k))){ks.push('ebitdam','patm')}
+ if(has(t,'return','returns')&&!ks.some(k=>['roe','ronw','roce'].includes(k))&&!has(t,'tax return')){ks.push('roe','ronw','roce')}
+ if(ks.length){const k2=ks.includes('top5')||ks.includes('top10')?ks.filter(k=>k!=='clients'):ks;return ansMetric(k2.slice(0,5),findPeriods(t),t)}
+ return `I couldn't find that in Expression 360's disclosed data. I answer only from the figures on this dashboard (FY23 – H1 FY26 restated DRHP: P&amp;L, cash flow, balance sheet, customers and peers).<br>Try: <i>"revenue growth"</i>, <i>"why is DSO high?"</i>, <i>"compare RoNW with peers"</i> or <i>"what if DSO is 60 days?"</i>`}
+window.anaAnswer=answer; // exposed for testing
+
+/* ---------- UI ---------- */
+const log=document.getElementById('anaLog'),win=document.getElementById('anaWin'),inp=document.getElementById('anaIn'),tip=document.getElementById('anaTip'),badge=document.getElementById('anaBadge');
+const SUG=['Give me a summary','Revenue growth','Why did margins improve?','Why was cash flow negative in FY25?','What is DSO?','RoE calculation','Compare RoNW with peers','What if DSO is 60 days?','Value at 20× P/E','What if cost of services is 70%?','Client concentration','SWOT','Top risks','What should the CFO do?'];
+const AVI='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAgMTIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IkV4cGVyaW9uIEFuYWx5c3QgYXZhdGFyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZWFCZyIgeDE9IjAiIHkxPSIwIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzJhNzhkNiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzE0MjEzZCIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImVhU2tpbiIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iI2Y0Y2ZhZSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2U3YjQ4ZiIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImVhSGFpciIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPjxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzNhMmEyNiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzFlMTUxMyIvPjwvbGluZWFyR3JhZGllbnQ+CiAgICA8Y2xpcFBhdGggaWQ9ImVhQ2xpcCI+PGNpcmNsZSBjeD0iNjAiIGN5PSI2MCIgcj0iNjAiLz48L2NsaXBQYXRoPgogIDwvZGVmcz4KICA8ZyBjbGlwLXBhdGg9InVybCgjZWFDbGlwKSI+CiAgICA8Y2lyY2xlIGN4PSI2MCIgY3k9IjYwIiByPSI2MCIgZmlsbD0idXJsKCNlYUJnKSIvPgogICAgPCEtLSBkYXRhIGdyaWQgLyBjaXJjdWl0IGFjY2VudHMgLS0+CiAgICA8ZyBzdHJva2U9IiM5ZmM0ZjUiIHN0cm9rZS1vcGFjaXR5PSIuMTgiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSI+CiAgICAgIDxwYXRoIGQ9Ik04IDM0aDE2bDYtNmgxMiIvPjxwYXRoIGQ9Ik0xMTIgMzBIOTZsLTYgNkg4MCIvPjxwYXRoIGQ9Ik02IDc2aDEyIi8+PHBhdGggZD0iTTExNCA3NGgtMTIiLz4KICAgIDwvZz4KICAgIDxnIGZpbGw9IiM5ZmU3ZmYiIGZpbGwtb3BhY2l0eT0iLjQ1Ij48Y2lyY2xlIGN4PSI0MiIgY3k9IjI4IiByPSIxLjYiLz48Y2lyY2xlIGN4PSI4MCIgY3k9IjM2IiByPSIxLjYiLz48Y2lyY2xlIGN4PSIxOCIgY3k9Ijc2IiByPSIxLjQiLz48Y2lyY2xlIGN4PSIxMDIiIGN5PSI3NCIgcj0iMS40Ii8+PC9nPgogICAgPCEtLSBoYWlyIChiYWNrKSAtLT4KICAgIDxwYXRoIGQ9Ik0zMyA2MGMtMy0yNCA5LTM4IDI3LTM4czMwIDE0IDI3IDM4Yy0xIDEwIDIgMjAgNiAyOEgyN2M0LTggNy0xOCA2LTI4eiIgZmlsbD0idXJsKCNlYUhhaXIpIi8+CiAgICA8IS0tIGJsYXplciAmIHNob3VsZGVycyAtLT4KICAgIDxwYXRoIGQ9Ik0xNCAxMjJjMy0yMiAyMC0zNCA0Ni0zNHM0MyAxMiA0NiAzNHoiIGZpbGw9IiMxYjJiNTIiLz4KICAgIDxwYXRoIGQ9Ik00NCA5MGwxNiAyMiAxNi0yMmMtNS0yLTEwLTMtMTYtM3MtMTEgMS0xNiAzeiIgZmlsbD0iI2ZmZiIvPgogICAgPHBhdGggZD0iTTQ0IDkwbC04IDQgMTQgMjIgMTAtNHpNNzYgOTBsOCA0LTE0IDIyLTEwLTR6IiBmaWxsPSIjMjIzODZiIi8+CiAgICA8IS0tIG5lY2sgLS0+CiAgICA8cGF0aCBkPSJNNTIgNzBoMTZ2MTRjMCA0LTQgNy04IDdzLTgtMy04LTd6IiBmaWxsPSIjZGNhNjg0Ii8+CiAgICA8IS0tIGZhY2UgLS0+CiAgICA8ZWxsaXBzZSBjeD0iNjAiIGN5PSI1NiIgcng9IjE4LjUiIHJ5PSIyMS41IiBmaWxsPSJ1cmwoI2VhU2tpbikiLz4KICAgIDwhLS0gaGFpciAoZnJvbnQsIHNpZGUtc3dlcHQpIC0tPgogICAgPHBhdGggZD0iTTQxIDU0YzAtMTYgOS0yNSAyMS0yNSAxMCAwIDE4IDYgMTkgMTgtNi03LTE1LTEwLTI0LTktNiAxLTExIDYtMTYgMTZ6IiBmaWxsPSJ1cmwoI2VhSGFpcikiLz4KICAgIDxwYXRoIGQ9Ik00MSA1NGMxLTYgMy0xMSA3LTE1LTEgNi0yIDExLTEgMTh6IiBmaWxsPSIjMmExZTFiIi8+CiAgICA8IS0tIGJyb3dzICYgZXllcyAtLT4KICAgIDxwYXRoIGQ9Ik00OC41IDUwLjVjMi41LTEuNiA1LjUtMS42IDcuNS0uMk02NCA1MC4zYzItMS40IDUtMS40IDcuNS4yIiBzdHJva2U9IiMyYTFlMWIiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICAgIDxlbGxpcHNlIGN4PSI1Mi41IiBjeT0iNTYiIHJ4PSIyLjMiIHJ5PSIyLjYiIGZpbGw9IiMxZjJhNDQiLz48ZWxsaXBzZSBjeD0iNjcuNSIgY3k9IjU2IiByeD0iMi4zIiByeT0iMi42IiBmaWxsPSIjMWYyYTQ0Ii8+CiAgICA8Y2lyY2xlIGN4PSI1My4zIiBjeT0iNTUuMSIgcj0iLjgiIGZpbGw9IiNmZmYiLz48Y2lyY2xlIGN4PSI2OC4zIiBjeT0iNTUuMSIgcj0iLjgiIGZpbGw9IiNmZmYiLz4KICAgIDwhLS0gbm9zZSwgc21pbGUsIGNoZWVrcyAtLT4KICAgIDxwYXRoIGQ9Ik02MCA1OC41Yy0uNiAzLTEuNCA0LjYtLjIgNS40IiBzdHJva2U9IiNjOThmNmMiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik01NCA2N2MzLjYgMyA4LjQgMyAxMiAwIiBzdHJva2U9IiNiODUwNWYiIHN0cm9rZS13aWR0aD0iMS44IiBzdHJva2UtbGluZWNhcD0icm91bmQiIGZpbGw9Im5vbmUiLz4KICAgIDxlbGxpcHNlIGN4PSI0OC41IiBjeT0iNjMuNSIgcng9IjMiIHJ5PSIxLjgiIGZpbGw9IiNlYjhmOGYiIGZpbGwtb3BhY2l0eT0iLjM1Ii8+PGVsbGlwc2UgY3g9IjcxLjUiIGN5PSI2My41IiByeD0iMyIgcnk9IjEuOCIgZmlsbD0iI2ViOGY4ZiIgZmlsbC1vcGFjaXR5PSIuMzUiLz4KICAgIDwhLS0gQUkgaGVhZHNldCAtLT4KICAgIDxwYXRoIGQ9Ik0zOSA1NmMwLTE3IDktMjcgMjEtMjdzMjEgMTAgMjEgMjciIHN0cm9rZT0iIzlmZTdmZiIgc3Ryb2tlLXdpZHRoPSIyLjYiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgogICAgPHJlY3QgeD0iMzQuNSIgeT0iNTIiIHdpZHRoPSI4IiBoZWlnaHQ9IjEzIiByeD0iNCIgZmlsbD0iIzVmZDNmZiIvPjxyZWN0IHg9Ijc3LjUiIHk9IjUyIiB3aWR0aD0iOCIgaGVpZ2h0PSIxMyIgcng9IjQiIGZpbGw9IiM1ZmQzZmYiLz4KICAgIDxyZWN0IHg9IjM2LjUiIHk9IjU1IiB3aWR0aD0iNCIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iI2U2ZmJmZiIvPjxyZWN0IHg9Ijc5LjUiIHk9IjU1IiB3aWR0aD0iNCIgaGVpZ2h0PSI3IiByeD0iMiIgZmlsbD0iI2U2ZmJmZiIvPgogICAgPHBhdGggZD0iTTM4LjUgNjRjMCA3IDQgMTEgMTAgMTIiIHN0cm9rZT0iIzlmZTdmZiIgc3Ryb2tlLXdpZHRoPSIyIiBmaWxsPSJub25lIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iNzYuMiIgcj0iMi40IiBmaWxsPSIjNWZkM2ZmIi8+CiAgICA8IS0tIGNoYXJ0IGJhZGdlIC0tPgogICAgPGNpcmNsZSBjeD0iOTEiIGN5PSI5MCIgcj0iMTMiIGZpbGw9IiMxYmFmN2EiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICAgIDxyZWN0IHg9Ijg0LjYiIHk9IjkxIiB3aWR0aD0iMy4yIiBoZWlnaHQ9IjUuNCIgcng9IjEiIGZpbGw9IiNmZmYiLz48cmVjdCB4PSI4OS40IiB5PSI4NyIgd2lkdGg9IjMuMiIgaGVpZ2h0PSI5LjQiIHJ4PSIxIiBmaWxsPSIjZmZmIi8+PHJlY3QgeD0iOTQuMiIgeT0iODMuNCIgd2lkdGg9IjMuMiIgaGVpZ2h0PSIxMyIgcng9IjEiIGZpbGw9IiNmZmYiLz4KICA8L2c+Cjwvc3ZnPgo=';
+function bubble(html,who){const d=document.createElement('div');d.className='amsg '+who;d.innerHTML=html;if(who==='b'){const r=document.createElement('div');r.className='arow';const i=document.createElement('img');i.src=AVI;i.alt='';r.appendChild(i);r.appendChild(d);log.appendChild(r)}else log.appendChild(d);log.scrollTop=log.scrollHeight;return d}
+function greet(){log.innerHTML='';bubble('Hi, I\'m <b>Expression360 Analyst</b> 👋<br>Ask me anything about <b>Expression 360</b>\'s financials: revenue, margins, cash flow, ratios, peers, risks or what-if scenarios. Pick a question below or type your own.','b')}
+function ask(q){q=q.trim();if(!q)return;bubble(q.replace(/[<>&]/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[c])),'u');inp.value='';
+ const ty=bubble('<span class="typing"><span></span><span></span><span></span></span>','b');
+ setTimeout(()=>{let a;try{a=answer(q)}catch(e){a='Sorry, I couldn\'t process that. Try rephrasing, e.g. "PAT in FY25".'}ty.innerHTML=a;log.scrollTop=log.scrollHeight;
+  ty.querySelectorAll('.anaJump').forEach(l=>l.addEventListener('click',()=>{if(window.innerWidth<=560)toggle(false)}))},450)}
+document.getElementById('anaChips').innerHTML=SUG.map(s=>`<button class="achip" type="button">${s.replace('&','&amp;')}</button>`).join('');
+document.querySelectorAll('#anaChips .achip').forEach(b=>b.addEventListener('click',()=>ask(b.textContent)));
+document.getElementById('anaForm').addEventListener('submit',e=>{e.preventDefault();ask(inp.value)});
+function toggle(open){const o=open??!win.classList.contains('open');win.classList.toggle('open',o);win.setAttribute('aria-hidden',!o);if(o){tip.style.display='none';badge.style.display='none';setTimeout(()=>inp.focus(),150)}}
+document.getElementById('anaLaunch').addEventListener('click',()=>toggle());
+document.getElementById('anaClose').addEventListener('click',()=>toggle(false));
+document.getElementById('anaClear').addEventListener('click',greet);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&win.classList.contains('open'))toggle(false)});
+setTimeout(()=>{tip.style.display='none'},9000);
+const na=document.getElementById('navAna');if(na)na.addEventListener('click',e=>{e.preventDefault();toggle(true)});
+greet();
+})();
+
 </script>
 </body>
 </html>
